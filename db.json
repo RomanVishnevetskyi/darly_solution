@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Leanne",
+      "lastname": "Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "city": "Gwenborough"
+    },
+    {
+      "id": 2,
+      "firstname": "Ervin",
+      "lastname": "Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv",
+      "city": "Wisokyburgh"
+    },
+    {
+      "id": 3,
+      "firstname": "Clementine",
+      "lastname": "Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net",
+      "city": "McKenziehaven"
+    },
+    {
+      "id": 4,
+      "firstname": "Patricia",
+      "lastname": "Lebsack",
+      "username": "Karianne",
+      "email": "Julianne.OConner@kory.org",
+      "city": "South Elvis"
+    },
+    {
+      "firstname": "Vasa",
+      "lastname": "Pupkin",
+      "username": "Vasek",
+      "email": "Vasa@gmail.com",
+      "city": "Olso",
+      "id": 5
+    }
+  ]
+}

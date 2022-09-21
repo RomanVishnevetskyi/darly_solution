@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
 import './App.css';
+import Table from "./components/table/Table";
+import {useAppDispatch, useAppSelector} from "./hooks/redux";
+import {fetchUsers} from "./store/reducers/ActionCreator";
+import ModalForm from "./components/modal/ModalForm";
+import Spiner from "./components/spiner/Spiner";
+import FormTest from "./components/form/FormTest";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useAppDispatch();
+    const {users, isLoading, error} = useAppSelector(state => state.user)
+
+
+    useEffect(() => {
+        dispatch(fetchUsers())
+    }, [])
+
+    if (isLoading) {
+        return <Spiner/>
+    }
+
+    if(error){
+        return <>
+            <h2 className="text-center">{error}</h2>
+        </>
+    }
+
+
+    return (
+        <div className='App'>
+            <Table users={users}/>
+            <ModalForm>
+                <FormTest/>
+            </ModalForm>
+        </div>
+    );
 }
 
 export default App;
